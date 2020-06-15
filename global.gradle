@@ -1,0 +1,165 @@
+ext {
+//    false:作为Lib组件存在， true:作为application存在
+    isBaseApplication = false  //这个不建议改
+    isShopApplication = true
+    isLoginApplication = false
+    isTravelApplication = false
+    isAirTicketApplication = false
+
+
+    android = [
+            compileSdkVersion: 28,
+//            buildToolsVersion       : "28.0.3",
+            minSdkVersion    : 21,
+            targetSdkVersion : 28,
+            versionCode      : 34,
+            versionName      : "1.3.5"    //必须是int或者float，否则影响线上升级
+    ]
+
+    version = [
+            androidSupportSdkVersion: "28.0.0",
+            retrofitSdkVersion      : "2.4.0",
+            glideSdkVersion         : "4.8.0",
+            canarySdkVersion        : "1.5.4",
+            constraintVersion       : "1.1.3",
+    ]
+
+    dependencies = [
+            //            //support
+            "appcompat-v7"                   : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
+            "design"                         : "com.android.support:design:${version["androidSupportSdkVersion"]}",
+            //            "palette"                  : "com.android.support:palette-v7:${version["androidSupportSdkVersion"]}",
+            "support-v4"                     : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
+            "cardview-v7"                    : "com.android.support:cardview-v7:${version["androidSupportSdkVersion"]}",
+            "support-annotations"            : "com.android.support:support-annotations:${version["androidSupportSdkVersion"]}",
+            "recyclerview-v7"                : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
+            "constraint-layout"              : "com.android.support.constraint:constraint-layout:${version["constraintVersion"]}",
+            "extensions"                     : 'android.arch.lifecycle:extensions:1.1.1',
+            //            "percent"                  : "com.android.support:percent:${version["androidSupportSdkVersion"]}",
+            //            "dynamic"                  : "com.android.support:support-dynamic-animation:${version["androidSupportSdkVersion"]}",
+            "multidex"                       : "com.android.support:multidex:1.0.3",
+            //
+            "navigation-fragment"            : 'android.arch.navigation:navigation-fragment:1.0.0',
+            "navigation-ui"                  : 'android.arch.navigation:navigation-ui:1.0.0',
+            "extensions"                     : 'android.arch.lifecycle:extensions:1.1.1',
+            //网络请求
+            "logging-interceptor"            : 'com.squareup.okhttp3:logging-interceptor:4.7.2',
+            "okgo"                           : 'com.lzy.net:okgo:3.0.4',
+            "okrx2"                          : 'com.lzy.net:okrx2:2.0.2',
+            "okserver"                       : 'com.lzy.net:okserver:2.0.5',
+            "rxandroid"                      : 'io.reactivex.rxjava2:rxandroid:2.1.1',
+            "rxjava"                         : 'io.reactivex.rxjava2:rxjava:2.2.19',
+//json解析
+            "gson"                           : 'com.google.code.gson:gson:2.8.6',
+            "fastjson"                       : 'com.alibaba:fastjson:1.2.70',
+//权限请求
+            "xxpermissions"                  : 'com.hjq:xxpermissions:6.2',
+            "permissionsdispatcher"          : "com.github.hotchemi:permissionsdispatcher:3.0.1",
+            "permissionsdispatcher-processor": "com.github.hotchemi:permissionsdispatcher-processor:3.0.1",
+//router 路由
+            "router"                         : "com.alibaba:arouter-api:1.5.0",
+            "router-compiler"                : "com.alibaba:arouter-compiler:1.2.2",
+//
+//            //image
+            "glide"                          : "com.github.bumptech.glide:glide:${version["glideSdkVersion"]}",
+            "glide-compiler"                 : "com.github.bumptech.glide:compiler:${version["glideSdkVersion"]}",
+            "okhttp3-integration"            : 'com.github.bumptech.glide:okhttp3-integration:4.8.0',
+            //查看加载大图和长图片
+            "BigImageViewPager"              : 'com.github.SherlockGougou:BigImageViewPager:v4_4.1.1',
+//状态栏导航栏适配
+            // 基础依赖包，必须要依赖
+            "immersionbar"                   : 'com.gyf.immersionbar:immersionbar:3.0.0',
+
+            // fragment快速实现（可选）
+            "immersionbar-components"        : 'com.gyf.immersionbar:immersionbar-components:3.0.0',
+
+
+            "SmartRefreshLayout"             : 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0',
+            "SmartRefreshHeader"             : 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0',
+            "BaseRecyclerViewAdapterHelper"  : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50',
+            // appcompat-v7包是必须的
+            // 如果不想继承SupportActivity/Fragment，自己定制Support，可仅依赖:
+            "fragmentation"                  : 'me.yokeyword:fragmentationx:1.0.2',
+            "fragmentation-core"             : 'me.yokeyword:fragmentationx-core:1.0.2',
+//弹出窗
+            "xpopup"                         : 'com.lxj:xpopup:1.8.10',
+
+            "hawk"                           : "com.orhanobut:hawk:2.0.1",
+            //banner轮播图
+            "banner"                         : 'com.zhpan.library:bannerview:2.7.4',
+            "recyclercoverflow"              : 'com.chenlittleping:recyclercoverflow:1.0.7',
+            "bottom-navigation"              : 'com.yinglan.alphatabs:library:1.0.8',
+//圆形图片库
+            "roundedimageview"               : 'com.makeramen:roundedimageview:2.3.0',
+//弹窗类
+            "Android-PickerView"             : 'com.contrarywind:Android-PickerView:4.1.9',
+
+            // 友盟基础组件库（所有友盟业务SDK都依赖基础组件库）
+            "umsdk-analytics"                : 'com.umeng.umsdk:analytics:8.0.0',
+
+            //基础组件库依赖(必须)
+            "umsdk-common"                   : 'com.umeng.umsdk:common:2.2.5',
+
+            //友盟分享依赖
+            "share-core"                     : 'com.umeng.umsdk:share-core:7.0.2',
+            "share-board"                    : 'com.umeng.umsdk:share-board:7.0.2',
+
+            //友盟分享平台，其他需要下载sdk集成
+            "share-qq"                       : 'com.umeng.umsdk:share-qq:7.0.2',
+            "share-wx"                       : 'com.umeng.umsdk:share-wx:7.0.2',
+            "zxing-library"                  : 'cn.yipianfengye.android:zxing-library:2.2',
+            "xlog"                           : 'com.elvishew:xlog:1.6.1',
+
+//             "butterknife"             : "com.jakewharton:butterknife:8.5.1",
+//             "butterknife-compiler"    : "com.jakewharton:butterknife-compiler:8.5.1",
+//            //network
+//            "retrofit"                 : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
+//            "retrofit-converter-gson"  : "com.squareup.retrofit2:converter-gson:${version["retrofitSdkVersion"]}",
+//            "retrofit-adapter-rxjava2"  : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofitSdkVersion"]}",
+//            "rxrelay"                  : "com.jakewharton.rxrelay2:rxrelay:2.0.0",
+//            "glide-transformations"    : "jp.wasabeef:glide-transformations:3.3.0",
+//            "picasso"                  : "com.squareup.picasso:picasso:2.5.2",
+//            "takephoto"                : "com.jph.takephoto:takephoto_library:4.0.3",
+//            "imagepicker"              : "com.lzy.widget:imagepicker:0.5.0",
+//
+//            //view
+//            "tablayout"                 : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
+//            "flowlayout"                : "com.zhy:flowlayout-lib:1.0.3",
+//
+//            //yc
+//            "YCStateLib"                  : "cn.yc:YCStateLib:1.1.5",
+//            "YCDialogLib"                 : "cn.yc:YCDialogLib:3.6.5",
+//            "YCCountDownViewLib"          : "cn.yc:YCCountDownViewLib:1.0",
+//            "YCUtilsLib"                  : "cn.yc:YCUtilsLib:1.6.2",
+//            "YCMultiInputViewLib"         : "cn.yc:YCMultiInputViewLib:1.0",
+//            "YCProgressLib"               : "cn.yc:YCProgressLib:1.2.7",
+//            "YCCardViewLib"               : "cn.yc:YCCardViewLib:1.2",
+//            "YCCustomTextLib"             : "cn.yc:YCCustomTextLib:2.1",
+//            "YCRecycleViewLib"            : "cn.yc:YCRecycleViewLib:1.1",
+//            "YCGalleryLib"                : "cn.yc:YCGalleryLib:1.1.5",
+//            "YCBaseAdapterLib"            : "cn.yc:YCBaseAdapterLib:1.3.4",
+//            "YCBannerLib"                 : "cn.yc:YCBannerLib:1.4.0",
+//            "YCRefreshViewLib"            : "org.yczbj:YCRefreshViewLib:2.5.6",
+//            "YCStatusBarLib"              : "cn.yc:YCStatusBarLib:1.4.0",
+//            "YCVideoPlayerLib"            : "cn.yc:YCVideoPlayerLib:2.6.0",
+//            "YCThreadPoolLib"             : "cn.yc:YCThreadPoolLib:1.3.2",
+//            "notificationLib"             : "cn.yc:notificationLib:1.0.3",
+//
+//            //tools
+//            "eventbus"                  : "org.greenrobot:eventbus:3.0.0",
+//            "dagger"                    : "com.google.dagger:dagger:2.13",
+//            "utilcode"                  : "com.blankj:utilcode:1.12.5",
+//            "easypermissions"           : "pub.devrel:easypermissions:1.0.1",
+
+//test
+            "junit"                          : 'junit:junit:4.12',
+            "runner"                         : 'androidx.test.ext:junit:1.1.1',
+            "espresso-core"                  : 'androidx.test.espresso:espresso-core:3.2.0',
+
+//testImplementation 'junit:junit:4.12'
+//androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    ]
+
+
+}
